@@ -1,18 +1,18 @@
 #front-landing
-  .jumbotron{:style=>"background-image:url('https://images.theoutbound.com/contents/104492/assets/1439232329123?fit=crop&h=600&w=1200');"}
+  .jumbotron{:style=>"background-image:url('https://images.unsplash.com/photo-1418225043143-90858d2301b4?q=80&fm=jpg&bri=-20&s=cec4e6a46e513a540401e413286fa2fe');"}
     .container
       .row
         .col-md-8
           %h5.h5
             FIND YOURSELF OUTSIDE
           %h1.h1
-            Post a Job
+            The best jobs in outdoors and travel are all in one place. Here.
         .col-md-4
           =link_to new_job_path do
             .btn.btn-lg.btn-success.pull-right
               POST A JOB
               .span.small.italic
-                $150 for 30 days 
+                $150 for 30 days
 
 
 
@@ -21,19 +21,16 @@
     =link_to job.url, :target => '_blank' do
       .row
         .job.fill-white
-          .col-md-2.flush
-            =image_tag('http://www.placecage.com/c/200/200')
-          .col-md-10.flush
+          .col-md-3.flush
+            =image_tag('http://www.placecage.com/c/300/200')
+          .col-md-9.flush
             .content
               .hook
                 %strong
                   =job.company
-                is looking for a 
+                is looking for a
                 %strong
                   =job.title
               .description
                 .p
                   =job.description
-              .timer
-                =job.days_left
-                Days Left!
