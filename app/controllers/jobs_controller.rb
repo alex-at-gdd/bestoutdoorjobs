@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
+
 	def index
-		@jobs = Job.all.active
+		@jobs = Job.all.active.order('created_at DESC')
 	end
 
 	def show
@@ -11,11 +12,17 @@ class JobsController < ApplicationController
 	end
 
 	def create
+		@job = Job.new(job_params)
+		if @job.save
+			redirect_to root_path
+		else
+			redirect_to :back, :flash => {:error => "Your URL must look like http://www.example.com"}
+		end
 	end
 
 	private
 
 		def job_params
-			require(:job).permit(:title, :location, :url, :company)
+			params.require(:job).permit(:title, :location, :url, :company, :description)
 		end
 end

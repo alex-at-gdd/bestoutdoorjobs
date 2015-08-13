@@ -10,28 +10,43 @@
 
 .container{:style=> 'margin-top:-40px;'}
   .row
-    .col-md-10.col-md-offset-2.fill-white{:style => 'padding-top:20px'}
-      .col-md-6
-        =form_for @job, :action => :post do |f|
-          .col-md-8.col-md-offset-2.form-group
-            =f.text_field :title, :placeholder => 'Job Title', :class => 'form-control', :required => true
-          .col-md-8.col-md-offset-2.form-group
-            =f.text_field :company, :placeholder => 'Company Name', :class => 'form-control', :required => true  
-          .col-md-8.col-md-offset-2.form-group
-            =f.text_field :location, :placeholder => 'Location', :class => 'form-control', :required => true  
-          .col-md-8.col-md-offset-2.form-group
-            =f.text_field :url, :placeholder => 'URL to the full job posting or contact form', :class => 'form-control', :required => true 
-          .col-md-8.col-md-offset-2
-            =f.submit :class=>'btn btn-lg btn-success', :value => 'Post Job'
-      .col-md-6
-        %ul
-          %li
-            One Job per ad please
-          %li
-            We reserve the right to remove any job or ad early for any reason
-          %li
-            If we remove your ad we'll refund you the prorated remaining fee
-          %li
-            Other than ads that are removed, there are no other refunds
+    .col-md-10.col-md-offset-2.fill-white
+      .row
+        .col-md-12
+          .h3
+            Reach thousands of prospective outdoorsy employees
+          %br
+          Fill out the form below to post your job to the site. The base cost is $150USD, and the ad will run for 30 days.
+      .row
+        .col-md-6
+          -if flash[:error].present?
+            .alert.alert-danger
+              %a.close{:data => {:dismiss => 'alert'}}
+                &times
+              =flash[:error]
+
+          =form_for @job, :action => :post do |f|
+            .col-md-12.form-group
+              =f.text_field :title, :placeholder => 'Job Title', :class => 'form-control', :required => true
+            .col-md-12.form-group
+              =f.text_field :company, :placeholder => 'Company Name', :class => 'form-control', :required => true  
+            .col-md-12.form-group
+              =f.text_field :location, :placeholder => 'Location', :class => 'form-control', :required => true  
+            .col-md-12.form-group
+              =f.text_field :url, :placeholder => 'URL to the full job posting or contact form', :class => 'form-control', :required => true
+            .col-md-12.form-group
+              =f.text_area :description, :placeholder => 'Enter a brief description about the job', :class => 'form-control', :required => true  
+            .col-md-12
+              =f.submit :class=>'btn btn-lg btn-success', :value => 'Post Job'
+        .col-md-6
+          %ul
+            %li
+              One Job per ad please
+            %li
+              We reserve the right to remove any job or ad early for any reason
+            %li
+              If we remove your ad we'll refund you the prorated remaining fee
+            %li
+              Other than ads that are removed, there are no other refunds
 }
 

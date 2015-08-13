@@ -29,6 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # To generate simulated data
 gem 'faker'
 
+#Make sure the url is valid
+gem "validate_url"
+
 #Use Bootstrap for layout
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
