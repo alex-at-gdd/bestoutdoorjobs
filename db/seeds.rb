@@ -4,7 +4,7 @@ unless Job.any?
 									:title => Faker::Name.title,
 									:url => "http://#{Faker::Internet.domain_name}/",
 									:location => Faker::Address.city,
-	                :description => Faker::Lorem.paragraphs(3)
+	                :description => Faker::Lorem.paragraph(5)
 								)
 	end
 end
