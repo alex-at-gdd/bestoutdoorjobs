@@ -7,5 +7,15 @@ class JobsController < ApplicationController
 	end
 
 	def new
+		@job = Job.new
 	end
+
+	def create
+	end
+
+	private
+
+		def job_params
+			require(:job).permit(:title, :location, :url, :company)
+		end
 end

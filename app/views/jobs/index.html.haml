@@ -1,12 +1,12 @@
 #front-landing
-  .jumbotron
+  .jumbotron{:style=>"background-image:url('https://images.theoutbound.com/contents/104492/assets/1439232329123?fit=crop&h=600&w=1200');"}
     .container
       .row
         .col-md-8
           %h5.h5
             FIND YOURSELF OUTSIDE
           %h1.h1
-            The best jobs in the outdoors and travel are all in one place. Here.
+            Post a Job
         .col-md-4
           =link_to new_job_path do
             .btn.btn-lg.btn-success.pull-right
@@ -20,7 +20,7 @@
   -@jobs.each do |job|
     =link_to job do
       .row
-        .job
+        .job.fill-white
           .col-md-2.flush
             =image_tag('http://www.placecage.com/c/200/200')
           .col-md-10.flush
