@@ -1,16 +1,14 @@
 #new-landing
-  .jumbotron{:style=>"background-image:url('https://images.theoutbound.com/contents/104492/assets/1439232329123?fit=crop&h=600&w=1200');"}
+  .jumbotron{:style=>"background-image:url('https://images.unsplash.com/photo-1418225043143-90858d2301b4?q=80&fm=jpg&bri=-20&s=cec4e6a46e513a540401e413286fa2fe');"}
     .container
       .row
         .col-md-8
-          %h5.h5
-            FIND YOURSELF OUTSIDE
           %h1.h1
             Post a Job
 
-.container{:style=> 'margin-top:-40px;'}
+.container{:style=> 'margin-top:-60px;'}
   .row
-    .col-md-10.col-md-offset-2.fill-white
+    .col-md-12.fill-white
       .row
         .col-md-12
           .h3
@@ -29,13 +27,13 @@
             .col-md-12.form-group
               =f.text_field :title, :placeholder => 'Job Title', :class => 'form-control', :required => true
             .col-md-12.form-group
-              =f.text_field :company, :placeholder => 'Company Name', :class => 'form-control', :required => true  
+              =f.text_field :company, :placeholder => 'Company Name', :class => 'form-control', :required => true
             .col-md-12.form-group
-              =f.text_field :location, :placeholder => 'Location', :class => 'form-control', :required => true  
+              =f.text_field :location, :placeholder => 'Location', :class => 'form-control', :required => true
             .col-md-12.form-group
               =f.text_field :url, :placeholder => 'URL to the full job posting or contact form', :class => 'form-control', :required => true
             .col-md-12.form-group
-              =f.text_area :description, :placeholder => 'Enter a brief description about the job', :class => 'form-control', :required => true  
+              =f.text_area :description, :placeholder => 'Enter a brief description about the job', :class => 'form-control', :required => true
             .col-md-12
               =f.submit :class=>'btn btn-lg btn-success', :value => 'Post Job'
         .col-md-6
