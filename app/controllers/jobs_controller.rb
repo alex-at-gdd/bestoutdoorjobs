@@ -12,7 +12,7 @@ class JobsController < ApplicationController
 	end
 
 	def create
-		@job = Job.new(job_params)
+		@job = job_manager
 		if @job.save
 			redirect_to root_path
 		else
@@ -22,7 +22,15 @@ class JobsController < ApplicationController
 
 	private
 
+		def job_manager
+			JobManager.new(job_params, account_params).perform
+		end
+
 		def job_params
 			params.require(:job).permit(:title, :location, :url, :company, :description)
+		end
+
+		def account_params
+			params.require(:account).permit(:name, :email)
 		end
 end

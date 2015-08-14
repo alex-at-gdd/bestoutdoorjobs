@@ -24,6 +24,13 @@
               =flash[:error]
 
           =form_for @job, :action => :post do |f|
+            %h4 Tell Us About Yourself
+            .col-md-12.form-group
+              =text_field_tag '[account][name]', nil ,:placeholder => 'Your Name', :class => 'form-control', :required => true
+            .col-md-12.form-group
+              =text_field_tag '[account][email]', nil ,:placeholder => 'Your Email', :class => 'form-control', :required => true
+
+            %h4 Provide a Job Description
             .col-md-12.form-group
               =f.text_field :title, :placeholder => 'Job Title', :class => 'form-control', :required => true
             .col-md-12.form-group
@@ -46,5 +53,5 @@
               If we remove your ad we'll refund you the prorated remaining fee
             %li
               Other than ads that are removed, there are no other refunds
-}
+
 
