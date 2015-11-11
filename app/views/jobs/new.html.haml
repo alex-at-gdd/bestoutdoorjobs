@@ -1,54 +1,54 @@
-#new-landing
+.shadow
+  #new-landing
+  .container.wide
+    .row
+      .col-md-12.fill-white.pad5{:style => "background: url(#{image_path('white-mtn.jpg')});background-size:cover;"}
+        .row
+          .col-md-5
+            %h2
+              Connect with passionate people looking for work in the outdoor industry.
+            %ul.font18
+              %li
+                %strong $120 per job posting (30 days)
+              %li
+                One Job per ad please
+              %li
+                We reserve the right to remove any job or ad early for any reason
+              %li
+                If we remove your ad we'll refund you the prorated remaining fee
+              %li
+                Other than ads that are removed, there are no other refunds
+          .col-md-1
+          .col-md-6
+            -if flash[:error].present?
+              .alert.alert-danger
+                %a.close{:data => {:dismiss => 'alert'}}
+                  &times
+                =flash[:error]
 
-.container.wide
-  .row
-    .col-md-12.fill-white.pad5{:style => "background: url(#{image_path('white-mtn.jpg')});background-size:cover;"}
-      .row
-        .col-md-5
-          %h2
-            Connect with passionate people looking for work in the outdoor industry.
-          %ul.font18
-            %li
-              %strong $120 per job posting (30 days)
-            %li
-              One Job per ad please
-            %li
-              We reserve the right to remove any job or ad early for any reason
-            %li
-              If we remove your ad we'll refund you the prorated remaining fee
-            %li
-              Other than ads that are removed, there are no other refunds
-        .col-md-1
-        .col-md-6
-          -if flash[:error].present?
-            .alert.alert-danger
-              %a.close{:data => {:dismiss => 'alert'}}
-                &times
-              =flash[:error]
+            =form_for @job, :action => :post do |f|
+              .col-md-12.form-group
+                %label Your Contact Info
+                =text_field_tag '[account][name]', nil ,:placeholder => 'Your Name', :class => 'form-control', :required => true
+              .col-md-12.form-group
+                =text_field_tag '[account][email]', nil ,:placeholder => 'Your Email', :class => 'form-control', :required => true
 
-          =form_for @job, :action => :post do |f|
-            .col-md-12.form-group
-              %label Your Contact Info
-              =text_field_tag '[account][name]', nil ,:placeholder => 'Your Name', :class => 'form-control', :required => true
-            .col-md-12.form-group
-              =text_field_tag '[account][email]', nil ,:placeholder => 'Your Email', :class => 'form-control', :required => true
-
-            .col-md-12.form-group
-              %label Job Title
-              =f.text_field :title, :placeholder => 'Job Title', :class => 'form-control', :required => true
-            .col-md-12.form-group
-              %label Company
-              =f.text_field :company, :placeholder => 'Company Name', :class => 'form-control', :required => true
-            .col-md-12.form-group
-              %label Location
-              =f.text_field :location, :placeholder => 'Location', :class => 'form-control', :required => true
-            .col-md-12.form-group
-              %label Where should this link to?
-              =f.text_field :url, :placeholder => 'URL to the full job posting or contact form', :class => 'form-control', :required => true
-            .col-md-12.form-group
-              =f.text_area :description, :placeholder => 'Enter a brief description about the job', :class => 'form-control', :required => true
-            .col-md-12
-              =f.submit :class=>'btn btn-lg btn-success', :value => 'Post Job'
+              .col-md-12.form-group
+                %label Job Title
+                =f.text_field :title, :placeholder => 'Job Title', :class => 'form-control', :required => true
+              .col-md-12.form-group
+                %label Company
+                =f.text_field :company, :placeholder => 'Company Name', :class => 'form-control', :required => true
+              .col-md-12.form-group
+                %label Location (if remote, put "Remote OK")
+                =f.text_field :location, :placeholder => 'Location', :class => 'form-control', :required => true
+              .col-md-12.form-group
+                %label Where should this link to?
+                =f.text_field :url, :placeholder => 'URL to the full job posting or contact form', :class => 'form-control', :required => true
+              .col-md-12.form-group
+                =f.text_area :description, :rows => 20, :placeholder => 'Enter a brief description about the job. Use Markdown styles for formatting.', :class => 'form-control', :required => true
+              .col-md-12
+                =f.submit :class=>'btn btn-lg btn-success', :value => 'Post Job'
 
 
 

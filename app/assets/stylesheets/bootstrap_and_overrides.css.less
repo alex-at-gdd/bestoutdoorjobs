@@ -30,7 +30,8 @@ body{
     -webkit-font-smoothing: antialiased;
 	background: #F2F2F2;
     background: #ADC7AA;
-};
+    padding: 50px 50px 0;
+}
 
 a{
 	color:#3d3d3d;
@@ -87,4 +88,21 @@ h2{
     height: 55px;
     box-shadow:none;
     background-color: #fbfbfb;
+}
+
+// MOBILE
+
+@media (max-width: 600px) {
+  body{
+    padding: 10px;
+  }
+  .title{
+    font-size: 40px;
+  }
+  .job{
+    .content{
+    padding:0px 30px 5px 30px !important;
+    }
+  }
+
 }
