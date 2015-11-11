@@ -1,12 +1,10 @@
 #front-landing
-  .jumbotron{:style=>"background-image:url('https://images.unsplash.com/photo-1418225043143-90858d2301b4?q=80&fm=jpg&bri=-20&s=cec4e6a46e513a540401e413286fa2fe');"}
+  .jumbotron
     .container
       .row
         .col-md-8
-          %h5.h5
-            FIND YOURSELF OUTSIDE
           %h1.h1
-            The best jobs in outdoors and travel are all in one place. Here.
+            Find the best jobs in the outdoor industry.
         .col-md-4
           =link_to new_job_path do
             .btn.btn-lg.btn-success.pull-right
@@ -16,24 +14,26 @@
 
 
 
-.container
+.container{:style=>"width: 100%;"}
   -@jobs.each do |job|
     =link_to job.url, :target => '_blank' do
       .row
-        .job.fill-white
-          .col-md-3.flush
+        .job.fill-light-gray
+          .col-md-1.flush
             =image_tag('http://www.placecage.com/c/300/200')
-          .col-md-9.flush
+          .col-md-6.flush
             .content
               .hook
                 %strong
-                  =job.company
-                is looking for a
-                %strong
                   =job.title
               .description
-                .p
-                  =job.description
+                =job.company
+          .col-md-2.flush
+            .content
+              .location
+                =job.location
+          .col-md-2.flush
+            .content
               .timer
                 =job.days_left
-                Days Left!
+                days left
