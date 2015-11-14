@@ -2,14 +2,17 @@
   #front-landing
     .jumbotron{:style => "background: url(#{image_path('header-bg.jpg')});background-size:cover;"}
       .container
-        .row
+        .row.nav
           .col-md-8
             .logomark
               Best Outdoor Jobs
           .col-md-4
+
             =link_to new_job_path do
-              .btn.btn-lg.btn-success.pull-right
+              .btn.btn-lg.btn-success.fr
                 POST A JOB
+            %a.fr.m2r Blog
+            %a.fr.m2r About
         .row
           .col-md-8
             %h1.title
