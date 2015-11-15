@@ -20,33 +20,105 @@
 // Glyphicons
 //@import "twitter/bootstrap/glyphicons.less";
 
+h1,h2,h3,h4{
+    font-family: 'brandon-grotesque';
+}
 
 body{
-	font-family: "sofia-pro",sans-serif;
-	font-weight: 300;
-	background: #f7f7f7;
-	color:#3d3d3d;
-};
+    font-family: courier;
+	font-weight: 100;
+    -webkit-font-smoothing: antialiased;
+	background: #F2F2F2;
+    background: #ADC7AA;
+    padding: 50px 50px 0;
+}
 
 a{
 	color:#3d3d3d;
 }
 
-//gobal helpers
+ul,ol{
+    -webkit-padding-start: 20px;
+}
+li{
+    margin-bottom: 15px;
+}
 
+h2{
+    font-size: 48px;
+    font-weight:700;
+}
+
+
+.title{
+    color: #444;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: "brandon-grotesque",sans-serif !important;
+}
+.btn{
+    font-family: "brandon-grotesque";
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    background: #94a493;
+    border:none;
+    border-radius: 30px;
+}
+//gobal helpers
+.wide{
+    width:100%;
+}
 .flush{
 	padding:0px !important;
 }
 .fill-white{
 	background-color:#fff;
 }
+.fill-light-gray{
+    background-color:#f0f0f0;
+}
 .small{
     font-size: 12px;
     font-weight: 300;
+}
 
+.font18{
+    font-size:18px;
+}
+.pad1t{
+    padding-top: 10px;
+}
+.pad3b{
+    padding-bottom: 30px;
+}
+.m2r{
+    margin-right: 20px;
+}
+.fr{
+    float:right;
 }
 // Forms
 
 .form-control{
     height: 55px;
+    box-shadow:none;
+    background-color: #fbfbfb;
+}
+
+// MOBILE
+
+@media (max-width: 600px) {
+  body{
+    padding: 10px;
+  }
+  .title{
+    font-size: 40px;
+  }
+  .job{
+    .content{
+    padding:0px 30px 5px 30px !important;
+    }
+  }
+
 }

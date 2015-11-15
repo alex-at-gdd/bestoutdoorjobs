@@ -16,6 +16,17 @@
 
 
 
-.container
-  =@job.inspect
-  .col-md-2
+  .container.fill-white{:style=>"width: 100%;"}
+    .row
+      .col-md-12
+        %ul
+          %li
+            =@job.company
+          %li
+            =@job.title
+          %li
+            =@job.location
+          %li
+            =@job.description
+          %li
+            =@job.url

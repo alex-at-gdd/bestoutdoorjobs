@@ -1,40 +1,49 @@
-#front-landing
-  .jumbotron{:style=>"background-image:url('https://images.unsplash.com/photo-1418225043143-90858d2301b4?q=80&fm=jpg&bri=-20&s=cec4e6a46e513a540401e413286fa2fe');"}
-    .container
-      .row
-        .col-md-8
-          %h5.h5
-            FIND YOURSELF OUTSIDE
-          %h1.h1
-            The best jobs in outdoors and travel are all in one place. Here.
-        .col-md-4
-          =link_to new_job_path do
-            .btn.btn-lg.btn-success.pull-right
-              POST A JOB
-              .span.small.italic
-                $150 for 30 days
+.shadow
+  #front-landing
+    .jumbotron{:style => "background: url(#{image_path('header-bg.jpg')});background-size:cover;"}
+      .container
+        .row.nav
+          .col-md-8
+            .logomark
+              Best Outdoor Jobs
+          .col-md-4
 
+            =link_to new_job_path do
+              .btn.btn-lg.btn-success.fr
+                POST A JOB
+            %a.fr.m2r Blog
+            %a.fr.m2r About
+        .row
+          .col-md-8
+            %h1.title
+              Find the best jobs in the outdoor industry.
 
-
-.container
-  -@jobs.each do |job|
-    =link_to job_path(job), :target => '_blank' do
-      .row
-        .job.fill-white
-          .col-md-2.flush
-            =image_tag 'http://www.placehold.it/200/200', :style => "width: 100%"
-          
-          .col-md-10.flush
-            .content
-              .hook
-                %strong
+  .container.fill-white{:style=>"width: 100%;"}
+    -@jobs.each do |job|
+      =link_to job_path(job), :target => '_blank' do
+        .row
+          .job.fill-light-gray
+            .col-md-1.flush
+              =image_tag('https://source.unsplash.com/category/nature/112x112')
+            .col-md-5.flush
+              .content
+                .hook
+                  %strong
+                    =job.title
+                .description
                   =job.company
-                is looking for a
-                %strong
-                  =job.title
-              .description
-                .p
-                  =job.description
-              .timer
-                =job.days_left
-                Days Left!
+            .col-md-2.flush
+              .content
+                .location.pad1t
+                  =job.location
+            .col-md-2.flush
+              .content
+                .timer.pad1t
+                  =job.days_left
+                  days left
+            .col-md-2.flush
+              .content
+                .social.pad1t.pull-right
+                  %a{ :href => "https://www.facebook.com/sharer/sharer.php?u=theoutbound.com", :target => "none", :title => "Meet the Team" }
+                    %i.fa.fa-facebook-square
+                  %i.fa.fa-twitter-square
