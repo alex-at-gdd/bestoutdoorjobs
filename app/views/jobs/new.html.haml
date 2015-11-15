@@ -30,27 +30,49 @@
               .col-md-12.form-group
                 %label Your Contact Info
                 =text_field_tag '[account][name]', nil ,:placeholder => 'Your Name', :class => 'form-control', :required => true
+
               .col-md-12.form-group
                 =text_field_tag '[account][email]', nil ,:placeholder => 'Your Email', :class => 'form-control', :required => true
 
               .col-md-12.form-group
                 %label Job Title
                 =f.text_field :title, :placeholder => 'Chief Marketing Wizard', :class => 'form-control', :required => true
+
               .col-md-12.form-group
                 %label Company
                 =f.text_field :company, :placeholder => 'ACME Outdoors', :class => 'form-control', :required => true
+
               .col-md-12.form-group
                 %label Location (if remote, put "Remote OK")
                 =f.text_field :location, :placeholder => 'Location', :class => 'form-control', :required => true
+
               .col-md-12.form-group
                 %label Where should this link to?
                 =f.text_field :url, :placeholder => 'URL to the full job posting or contact form', :class => 'form-control', :required => true
+
+              .col-md-12.form-group
+                .row
+                  .col-md-4
+                    %label
+                      %small
+                        Industry
+                    =select_tag :industry, options_for_select(Job.industries)
+                  .col-md-4
+                    %label
+                      %small
+                        Category
+                    =select_tag :job_category, options_for_select(Job.job_categories)
+                  .col-md-4
+                    %label
+                      %small
+                        Position Type
+                    =select_tag :position_type, options_for_select(Job.position_types)
+
               .col-md-12.form-group
                 =f.text_area :description, :rows => 20, :placeholder => 'Enter a brief description about the job. Use Markdown styles for formatting.', :class => 'form-control', :required => true
               .col-md-12
                 =f.submit :class=>'btn btn-lg btn-success', :value => 'Post Job'
 
 
-
-
-
+:javascript
+  $( "select" ).select2({});
