@@ -18,12 +18,13 @@
 
 .container
   -@jobs.each do |job|
-    =link_to job.url, :target => '_blank' do
+    =link_to job_path(job), :target => '_blank' do
       .row
         .job.fill-white
-          .col-md-3.flush
-            =image_tag('http://www.placecage.com/c/300/200')
-          .col-md-9.flush
+          .col-md-2.flush
+            =image_tag 'http://www.placehold.it/200/200', :style => "width: 100%"
+          
+          .col-md-10.flush
             .content
               .hook
                 %strong
