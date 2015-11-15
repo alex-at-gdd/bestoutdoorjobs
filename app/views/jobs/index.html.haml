@@ -11,8 +11,8 @@
             =link_to new_job_path do
               .btn.btn-lg.btn-success.fr
                 POST A JOB
-            %a.fr.m2r Blog
-            %a.fr.m2r About
+            =link_to 'About', about_path, :class => 'fr m2r'
+            =link_to 'Blog', 'https://www.theoutbound.com', :class => 'fr m2r'
         .row
           .col-md-8
             %h1.title
@@ -20,7 +20,7 @@
 
   .container.fill-white{:style=>"width: 100%;"}
     -@jobs.each do |job|
-      =link_to job_path(job), :target => '_blank' do
+      =link_to job_path(job) do
         .row
           .job.fill-light-gray
             .col-md-1.flush
