@@ -1,7 +1,7 @@
 class Job < ActiveRecord::Base
-  INDUSTRIES = ['Mountain', 'Ocean', 'Trail', 'Skate']
-  CATEGORIES = ['Full Time', 'Temp', 'Seasonal', 'Hourly']
-  POSITION_TYPES = ['Cook', 'Construction', 'Hospitality', 'Ski Bum']
+  INDUSTRIES = ['Outdoors', 'Snow', 'Action', 'Bike', 'Fitness', 'Fishing', 'Hunting/Shooting']
+  CATEGORIES = ['Design']
+  POSITION_TYPES = ['Full Time', 'Part Time', 'Seasonal', 'Contract', 'Hourly', 'Freelance', 'Intern']
 
 	belongs_to :account
 	validates :url, :url => {:no_local => true}

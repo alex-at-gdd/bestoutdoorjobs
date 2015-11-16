@@ -1,22 +1,32 @@
 #front-landing
   .jumbotron{:style=>"background-image:url('https://images.unsplash.com/photo-1418225043143-90858d2301b4?q=80&fm=jpg&bri=-20&s=cec4e6a46e513a540401e413286fa2fe');"}
     .container
-      .row
+      .row.nav
         .col-md-8
-          %h5.h5
-            ABOUT BEST OUTDOOR JOBS
-          %h2
-            YOU HAVE A SHITTY JOB, FIND A NEW ONE HERE
+          .logomark
+            Best Outdoor Jobs
         .col-md-4
+
           =link_to new_job_path do
-            .btn.btn-lg.btn-success.pull-right
+            .btn.btn-lg.btn-success.fr
               POST A JOB
-              .span.small.italic
-                $150 for 30 days
+          =link_to 'About', about_path, :class => 'fr m2r'
+          =link_to 'Blog', 'https://www.theoutbound.com', :class => 'fr m2r'
+    .row
+      .col-md-7.col-centered
+        %h1.job-title
+          You probably have a shitty job. Find a better one here.
 
 
 
   .container.fill-white{:style=>"width: 100%;"}
     .row
-      .col-md-12
-        this is a thing by kyle and alex
+      .col-md-7.col-centered
+        %h2
+          This is a section title
+        %p.longform
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis!
+        %h2
+          Why should you post?
+        %p.longform
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis!

@@ -1,32 +1,46 @@
 #front-landing
   .jumbotron{:style=>"background-image:url('https://images.unsplash.com/photo-1418225043143-90858d2301b4?q=80&fm=jpg&bri=-20&s=cec4e6a46e513a540401e413286fa2fe');"}
     .container
-      .row
+      .row.nav
         .col-md-8
-          %h5.h5
-            ="WANT TO WORK WITH #{@job.company.upcase}?"
-          %h4
-            =@job.description
+          .logomark
+            Best Outdoor Jobs
         .col-md-4
+
           =link_to new_job_path do
-            .btn.btn-lg.btn-success.pull-right
+            .btn.btn-lg.btn-success.fr
               POST A JOB
-              .span.small.italic
-                $150 for 30 days
+          =link_to 'About', about_path, :class => 'fr m2r'
+          =link_to 'Blog', 'https://www.theoutbound.com', :class => 'fr m2r'
+    .row
+      .col-md-8
+        %h1.job-title
+          ="Want to Work at #{@job.company}?"
 
 
 
   .container.fill-white{:style=>"width: 100%;"}
-    .row
-      .col-md-12
-        %ul
-          %li
-            =@job.company
-          %li
+    .col-md-12.pad5.mob-pad2
+      .row
+        .col-md-8
+          %h2.upcase
             =@job.title
-          %li
+          %p
+            =@job.created_at
+          %h3
+            =@job.company
+          %h3
             =@job.location
-          %li
+          %p.longform
             =@job.description
-          %li
-            =@job.url
+          .apply
+            %h4 How to Apply:
+            %p
+              =@job.url
+        .col-md-3.col-md-offset-1
+          %p Tell a Friend
+          %p Share on Twitter
+          %p Share on Facebook
+          %p Post on LinkedIn
+
+

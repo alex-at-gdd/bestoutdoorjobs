@@ -33,10 +33,14 @@ box-shadow: 0px 0px 83px -21px rgba(0,0,0,0.45);
 	padding: 50px;
 }
 .job{
-	margin:2px 0;
 	overflow:hidden;
 	position:relative;
 	background-size:cover;
+	border-bottom: 1px solid #efefef;
+	transition: all .15s ease-in-out;
+	&:hover{
+		background: #fafafa;
+	}
 	.content{
 		padding:30px;
 	}
@@ -59,9 +63,12 @@ box-shadow: 0px 0px 83px -21px rgba(0,0,0,0.45);
 		font-size: 20px;
 		opacity: 0.7;
 	}
-
-
 }
+.apply{
+		background: #efefef;
+		padding: 20px;
+		margin-top: 30px;
+	}
 &::-webkit-input-placeholder::after {
     display: block;
     content: "\A#Section Title \A Lorem ipsum dolor sit amet...\A\A * List item #1\A* List item #2\A* List item #3.";

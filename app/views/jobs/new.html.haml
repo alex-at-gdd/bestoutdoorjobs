@@ -2,7 +2,7 @@
   #new-landing
   .container.wide
     .row
-      .col-md-12.fill-white.pad5{:style => "background: url(#{image_path('white-mtn.jpg')});background-size:cover;"}
+      .col-md-12.fill-white.pad5.mob-pad2{:style => "background: url(#{image_path('white-mtn.jpg')});background-size:cover;"}
         .row
           .col-md-5
             %h2.pad3b
@@ -28,19 +28,8 @@
 
             =form_for @job, :action => :post do |f|
               .col-md-12.form-group
-                %label Your Contact Info
-                =text_field_tag '[account][name]', nil ,:placeholder => 'Your Name', :class => 'form-control', :required => true
-
-              .col-md-12.form-group
-                =text_field_tag '[account][email]', nil ,:placeholder => 'Your Email', :class => 'form-control', :required => true
-
-              .col-md-12.form-group
                 %label Job Title
-                =f.text_field :title, :placeholder => 'Chief Marketing Wizard', :class => 'form-control', :required => true
-
-              .col-md-12.form-group
-                %label Company
-                =f.text_field :company, :placeholder => 'ACME Outdoors', :class => 'form-control', :required => true
+                =f.text_field :title, :placeholder => 'Ex. Chief Marketing Wizard, Lift Operator', :class => 'form-control', :required => true
 
               .col-md-12.form-group
                 %label Location (if remote, put "Remote OK")
@@ -69,7 +58,22 @@
                     =select_tag :position_type, options_for_select(Job.position_types)
 
               .col-md-12.form-group
+                %label Job Description
                 =f.text_area :description, :rows => 20, :placeholder => 'Enter a brief description about the job. Use Markdown styles for formatting.', :class => 'form-control', :required => true
+
+
+
+              .col-md-12.form-group
+                %label Your Contact Info
+                =text_field_tag '[account][name]', nil ,:placeholder => 'Your Name', :class => 'form-control', :required => true
+
+              .col-md-12.form-group
+                =text_field_tag '[account][email]', nil ,:placeholder => 'Your Email', :class => 'form-control', :required => true
+
+              .col-md-12.form-group
+                %label Company
+                =f.text_field :company, :placeholder => 'ACME Outdoors', :class => 'form-control', :required => true
+
               .col-md-12
                 =f.submit :class=>'btn btn-lg btn-success', :value => 'Post Job'
 
