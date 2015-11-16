@@ -27,11 +27,15 @@
             =@job.title
           %p
             =@job.created_at
-          %h3
-            =@job.company
-          %h3
-            =@job.location
-          %p.longform
+          .col-md-6.flush
+            %label.color-gray Company
+            %h3.m00
+              =@job.company
+          .col-md-6.flush
+            %label.color-gray Location
+            %h3.m00
+              =@job.location
+          %p.longform.m3t
             =@job.description
           .apply
             %h4 How to Apply:
@@ -39,7 +43,7 @@
               =@job.url
         .col-md-2.col-md-offset-1
           .thing{"data-offset-top" => "430", "data-spy" => "affix"}
-            .btn.m2b
+            .btn.m1b
               %i.fa.fa-envelope.m1r
               Tell a friend
             .btn.twitter.m1b
