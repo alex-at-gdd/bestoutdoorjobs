@@ -39,6 +39,7 @@
                 %label Where should this link to?
                 =f.text_field :url, :placeholder => 'URL to the full job posting or contact form', :class => 'form-control', :required => true
 
+
               .col-md-12.form-group
                 .row
                   .col-md-4
@@ -73,6 +74,10 @@
               .col-md-12.form-group
                 %label Company
                 =f.text_field :company, :placeholder => 'ACME Outdoors', :class => 'form-control', :required => true
+
+              .col-md-12.form-group
+                %label Company Website
+                =f.text_field :url, :placeholder => 'http://www.acmeoutdoors.com', :class => 'form-control', :required => true
 
               .col-md-12
                 =f.submit :class=>'btn btn-lg btn-success', :value => 'Post Job'

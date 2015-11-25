@@ -1,8 +1,8 @@
 .shadow
   #front-landing
-    .jumbotron{:style => "background: url(#{image_path('header-bg.jpg')});background-size:cover;"}
+    .jumbotron.mob-pad2{:style => "background: url('https://scontent-lax3-1.xx.fbcdn.net/hphotos-xpa1/t31.0-8/11728889_1048768568489379_1840094476535132507_o.jpg');background-size:cover;"}
       .container
-        .row.nav
+        .row.nav.color-white
           .col-md-8
             .logomark
               Best Outdoor Jobs
@@ -15,14 +15,14 @@
             =link_to 'Blog', 'https://www.theoutbound.com', :class => 'fr m2r'
         .row
           .col-md-8
-            %h1.title
+            %h1.title.color-white.text-shadow
               Find the best jobs in the outdoor industry.
 
   .container.fill-white{:style=>"width: 100%;"}
     -@jobs.each do |job|
       =link_to job_path(job) do
         .row
-          .job
+          .job.mob-pad2
             .col-md-1.flush
               =image_tag('https://source.unsplash.com/category/nature/112x112')
             .col-md-5.flush
@@ -32,7 +32,7 @@
                     =job.title
                 .description
                   =job.company
-            .col-md-2.flush
+            .col-md-3.flush
               .content
                 .location.pad1t
                   =job.location
@@ -41,7 +41,7 @@
                 .timer.pad1t
                   =job.days_left
                   days left
-            .col-md-2.flush
+            .col-md-1.flush.visible-lg
               .content
                 .social.pad1t.pull-right
                   %a{ :href => "https://www.facebook.com/sharer/sharer.php?u=theoutbound.com", :target => "none", :title => "Meet the Team" }

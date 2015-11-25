@@ -1,32 +1,44 @@
 #front-landing
-  .jumbotron{:style=>"background-image:url('https://images.unsplash.com/photo-1418225043143-90858d2301b4?q=80&fm=jpg&bri=-20&s=cec4e6a46e513a540401e413286fa2fe');"}
+  .jumbotron.tall{:style=>"background-image:url('https://scontent-lax3-1.xx.fbcdn.net/hphotos-xpa1/t31.0-8/11728889_1048768568489379_1840094476535132507_o.jpg');background-size:cover;"}
     .container
-      .row.nav
+      .row.nav.color-white
         .col-md-8
           .logomark
-            Best Outdoor Jobs
+            =link_to 'Best Outdoor Jobs', '/'
         .col-md-4
 
           =link_to new_job_path do
             .btn.btn-lg.btn-success.fr
               POST A JOB
           =link_to 'About', about_path, :class => 'fr m2r'
-          =link_to 'Blog', 'https://www.theoutbound.com', :class => 'fr m2r'
+          =link_to 'Blog', 'outdoorjobs.tumblr.com', :class => 'fr m2r'
     .row
-      .col-md-7.col-centered
-        %h1.job-title
-          You probably have a shitty job. Find a better one here.
+      .col-md-7.col-centered.pad4t
+        %h1.job-title.fadeInDown.animated.text-shadow
+          Mostly, we just want to help people find rad jobs in the outdoor industry
 
 
 
   .container.fill-white{:style=>"width: 100%;"}
     .row
       .col-md-7.col-centered
-        %h2
+        %h2.pad4t
           This is a section title
-        %p.longform
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis!
+        %p.longform.pad8b
+          It's pretty simple. People are more interested than ever in pursuing careers that align with their passions. We want to connect people who want to work in the outdoor industry with the companies that need them.
         %h2
           Why should you post?
-        %p.longform
+        %p.longform.pad8b
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla, ab est. Ad in reprehenderit eligendi dignissimos eveniet sit architecto, voluptatem sed eius. Voluptatum perferendis tenetur iure placeat dignissimos quis!
+        %h2
+          Who are you?
+        %p.longform.pad8b
+          Just two friends who love the outdoors and saw an oppportunity to build something that could be useful for a lot of people.
+        %h3
+          I have multiple jobs I'd like to post. Is there a volume discount?
+        %p.longform.pad4b
+          Shoot us an email, and we'll chat. We can arrange volume discounts based on the number of jobs you plan to post.
+        %h3
+          I have multiple jobs I'd like to post. Is there a volume discount?
+        %p.longform
+          Shoot us an email, and we'll chat. We can arrange volume discounts based on the number of jobs you plan to post.

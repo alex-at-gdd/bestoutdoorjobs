@@ -1,21 +1,17 @@
 #front-landing
-  .jumbotron{:style=>"background-image:url('https://images.unsplash.com/photo-1418225043143-90858d2301b4?q=80&fm=jpg&bri=-20&s=cec4e6a46e513a540401e413286fa2fe');"}
+  .jumbotron.short{:style=>"background-image:url('https://scontent-lax3-1.xx.fbcdn.net/hphotos-xpa1/t31.0-8/11728889_1048768568489379_1840094476535132507_o.jpg');"}
     .container
-      .row.nav
+      .row.nav.color-white
         .col-md-8
           .logomark
-            Best Outdoor Jobs
+            =link_to 'Best Outdoor Jobs', '/'
         .col-md-4
 
           =link_to new_job_path do
             .btn.btn-lg.btn-success.fr
               POST A JOB
           =link_to 'About', about_path, :class => 'fr m2r'
-          =link_to 'Blog', 'https://www.theoutbound.com', :class => 'fr m2r'
-    .row
-      .col-md-8
-        %h1.job-title
-          ="Want to Work at #{@job.company}?"
+          =link_to 'Blog', 'http://www.outdoorjobs.tumblr.com', :class => 'fr m2r'
 
 
 
@@ -23,18 +19,19 @@
     .col-md-12.pad5.mob-pad2
       .row
         .col-md-8
-          %h2.upcase
+          %h2.upcase.fadeInLeft.animated
             =@job.title
           %p
             =@job.created_at
-          .col-md-6.flush
-            %label.color-gray Company
-            %h3.m00
-              =@job.company
-          .col-md-6.flush
-            %label.color-gray Location
-            %h3.m00
-              =@job.location
+          .pad8b
+            .col-md-6.flush
+              %label.color-gray Company
+              %h3.m00
+                =@job.company
+            .col-md-6.flush
+              %label.color-gray Location
+              %h3.m00
+                =@job.location
           %p.longform.m3t
             =@job.description
           .apply
@@ -42,10 +39,7 @@
             %p
               =@job.url
         .col-md-2.col-md-offset-1
-          .thing{"data-offset-top" => "430", "data-spy" => "affix"}
-            .btn.m1b
-              %i.fa.fa-envelope.m1r
-              Tell a friend
+          .thing{"data-offset-top" => "170", "data-spy" => "affix"}
             .btn.twitter.m1b
               %i.fa.fa-twitter-square.m1r
               Share on Twitter
